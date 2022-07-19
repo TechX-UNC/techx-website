@@ -1,50 +1,14 @@
 import React, { Component } from 'react'
-import Form from './Form'
-import Table from './Table'
+import logo from './white-full-small.png'
 
 class App extends React.Component {
-    state = {
-        characters: [
-            {
-                name: "Charlie",
-                job: "Janitor",
-            },
-            {
-                name: "Mac",
-                job: "Bouncer",
-            },
-            {
-                name: "Dee",
-                job: "Aspiring Actress"
-            },
-            {
-                name: "Dennis",
-                job: "Bartender",
-            }
-        ],
-    }
-
-    handleSubmit = (character) => {
-        this.setState({characters: [...this.state.characters, character]})
-    }
-
-    removeCharacter = (index) => {
-        const { characters } = this.state
-
-        this.setState({
-            characters: characters.filter((character, i) => {
-                return i !== index
-            }),
-        })
-    }
-
 
     render() {
-        
         return (
-            <div className="container">
-                <Table characterData={this.state.characters} removeCharacter={this.removeCharacter} />
-                <Form handleSubmit={this.handleSubmit}/>
+            <div class="container">
+                <img src={logo} alt="TechX" height={50}/>
+                <div class="spacer"></div>
+                <p class="message">We are not accepting dues at this time. Please check back on August 31st, 2022 at the latest.</p>
             </div>
         )
     }
